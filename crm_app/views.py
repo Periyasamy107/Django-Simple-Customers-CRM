@@ -94,3 +94,4 @@ def update_customer(request, pk):
         messages.success(request, 'You must be logged in, to update the customer records!!!')
         return redirect('home')
     
+    
