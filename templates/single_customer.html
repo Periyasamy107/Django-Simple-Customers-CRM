@@ -1,0 +1,34 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<center>
+<h1> Single Customer Record </h1>
+<br>
+
+<div class="card text-center bg-success" style="color: white; width: 500px;">
+    <div class="card-header">
+      <h3 class="card-title"> {{customer.first_name}} {{customer.last_name}} </h3>
+    </div>
+    <div class="card-body">
+
+    <table class="table table-bordered table-success">
+        
+        <tr><th>Email</th><td>{{customer.email}}</td><tr>
+        <tr><th>Phone</th><td>{{customer.phone}}</td><tr>
+        <tr><th>Address</th><td>{{customer.address}}</td><tr>
+        <tr><th>City</th><td>{{customer.city}}</td><tr>
+        <tr><th>State</th><td>{{customer.state}}</td><tr>
+        <tr><th>Pincode</th><td>{{customer.pincode}}</td><tr>
+        <tr><th>Created At</th><td>{{customer.created_at}}</td><tr>
+
+    </table>
+      <a href="{% url 'home' %} " class="btn btn-dark">Home</a>
+      <a href="{% url 'update_customer_record' customer.id %} " class="btn btn-primary">Update</a>
+      <a href="{% url 'delete_customer_record' customer.id %} " class="btn btn-danger">Delete</a>
+    </div>
+
+  </div>
+</center>
+{% endblock %}
